@@ -5,7 +5,7 @@ A single-page guide to popular Thai dishes: visitors browse a library of dishes,
 ## Language
 
 **Dish**:
-A single Thai food item in the library, carrying a name, region, category, and spice index.
+A single Thai food item in the library, carrying a name, region, category, and spice index. A dish may also carry a real photo; a dish without one falls back to a category illustration, but both are shown in the same visual treatment so the library reads as one considered set, not a mix of "photographed" and "placeholder" dishes.
 _Avoid_: Menu item, entry, food
 
 **Dish Library**:
@@ -27,3 +27,7 @@ _Avoid_: Random pick, daily special
 **Favorites**:
 The set of dishes a visitor has personally saved on their own device. Private to that browser — not shared or synced with other visitors or devices.
 _Avoid_: Saved items, likes, bookmarks
+
+**Member**:
+A visitor who has registered an account (email + password) via Supabase Auth, identified by a display name. Membership is separate from Favorites: signing in does not sync or attach a member's per-device Favorites — see [ADR-0002](./docs/adr/0002-membership-via-supabase-auth.md).
+_Avoid_: User, account, customer

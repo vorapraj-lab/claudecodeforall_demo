@@ -1,50 +1,26 @@
+
 <title>ป้ายเมนูไทย</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Trirong:wght@500;600;700&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Taviraj:ital,wght@0,500;0,600;0,700;1,500&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     color-scheme: light;
-    --paper: #faf7f1;
+    --olive: #7a6a3a;
+    --olive-deep: #5c4e2a;
+    --terracotta: #b5502f;
+    --paper: #faf6ef;
     --surface: #ffffff;
-    --surface-alt: #f4efe4;
-    --ink: #1c1815;
-    --ink-soft: #6f6459;
-    --ink-faint: #a49a8a;
-    --red: #a2172b;
-    --red-deep: #7c1020;
-    --red-tint: #f4dfe1;
-    --line: #e6ded0;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      color-scheme: dark;
-      --paper: #17140f;
-      --surface: #1d1912;
-      --surface-alt: #241e15;
-      --ink: #f2ead9;
-      --ink-soft: #b8a894;
-      --ink-faint: #756a58;
-      --red: #e2495c;
-      --red-deep: #ef6a7c;
-      --red-tint: #3a1e21;
-      --line: #362f24;
-    }
-  }
-
-  :root[data-theme="dark"] {
-    color-scheme: dark;
-    --paper: #17140f;
-    --surface: #1d1912;
-    --surface-alt: #241e15;
-    --ink: #f2ead9;
-    --ink-soft: #b8a894;
-    --ink-faint: #756a58;
-    --red: #e2495c;
-    --red-deep: #ef6a7c;
-    --red-tint: #3a1e21;
-    --line: #362f24;
+    --surface-alt: #ede4d0;
+    --ink: #2b2118;
+    --ink-soft: #6b5d4d;
+    --ink-faint: #a69880;
+    --red: var(--olive);
+    --red-deep: var(--olive-deep);
+    --red-tint: rgba(122, 106, 58, 0.12);
+    --chili-red: var(--terracotta);
+    --line: #e4dac4;
+    --on-accent: #fdf9f0;
   }
 
   * { box-sizing: border-box; }
@@ -66,8 +42,9 @@
   }
 
   h1, h2, h3, .display {
-    font-family: 'Trirong', 'Noto Serif Thai', serif;
+    font-family: 'Taviraj', 'Noto Serif Thai', serif;
     font-weight: 600;
+    letter-spacing: 0;
     text-wrap: balance;
   }
 
@@ -85,14 +62,14 @@
 
   .wrap {
     width: 100%;
-    max-width: 680px;
+    max-width: 1080px;
     margin: 0 auto;
   }
 
   .kicker {
     font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.16em;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--red);
     margin: 0 0 8px;
@@ -118,28 +95,39 @@
     justify-content: space-between;
     gap: 16px;
     padding-block: 15px;
-    max-width: 680px;
+    max-width: 1080px;
     margin: 0 auto;
   }
 
   .wordmark {
-    font-family: 'Trirong', serif;
-    font-weight: 700;
-    font-size: 1.1rem;
+    font-family: 'Taviraj', serif;
+    font-weight: 600;
+    font-style: italic;
+    letter-spacing: 0;
+    font-size: 1.15rem;
   }
 
-  .wordmark em { font-style: normal; color: var(--red); }
+  .wordmark em { font-style: inherit; color: var(--red); }
 
   .nav-links {
     display: flex;
-    gap: 20px;
-    font-size: 0.8rem;
+    gap: 10px;
+    font-size: 0.78rem;
     font-weight: 600;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
   }
 
-  .nav-links a { text-decoration: none; color: var(--ink-soft); }
-  .nav-links a:hover { color: var(--red); }
+  .nav-links a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--red);
+    border: 1px solid var(--red);
+    border-radius: 9999px;
+    padding: 7px 14px;
+    transition: background 0.12s ease, color 0.12s ease;
+  }
+  .nav-links a:hover { background: var(--red); color: var(--on-accent); }
 
   /* ---------- Buttons ---------- */
   .btn {
@@ -149,24 +137,24 @@
     border: none;
     border-radius: 999px;
     padding: 12px 22px;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 0.92rem;
     cursor: pointer;
     transition: transform 0.12s ease, background 0.12s ease;
   }
 
-  .btn-primary { background: var(--red); color: #fff8ec; }
+  .btn-primary { background: var(--red); color: var(--on-accent); }
   .btn-primary:hover { background: var(--red-deep); transform: translateY(-1px); }
 
   .btn-ghost {
     background: transparent;
-    border: 1px solid var(--line);
-    color: var(--ink-soft);
+    border: 1px solid var(--red);
+    color: var(--red);
   }
-  .btn-ghost:hover { border-color: var(--red); color: var(--red); }
+  .btn-ghost:hover { background: var(--red); color: var(--on-accent); }
 
   /* ---------- Hero ---------- */
-  .hero { padding: 38px 0 26px; }
+  .hero { padding: 52px 0 36px; }
 
   .hero h1 {
     font-size: clamp(1.8rem, 6vw, 2.3rem);
@@ -184,14 +172,31 @@
   .hero-rule { width: 48px; height: 3px; background: var(--red); }
 
   /* ---------- Today's dish ---------- */
-  .today { padding: 8px 0 40px; }
+  .today { padding: 12px 0 56px; }
 
   .today-card {
     background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 16px;
+    border: none;
+    border-radius: 12px;
     padding: 24px;
+    box-shadow: 0 20px 40px -20px rgba(43, 33, 24, 0.18);
   }
+
+  .today-card.has-photo { padding: 0; overflow: hidden; }
+
+  .today-photo-wrap { position: relative; width: 100%; aspect-ratio: 16 / 9; }
+
+  .today-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .today-photo-wrap .heart-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: color-mix(in srgb, var(--surface) 78%, transparent);
+    backdrop-filter: blur(6px);
+  }
+
+  .today-body { padding: 24px; }
 
   .today-head {
     display: flex;
@@ -260,7 +265,7 @@
   .heart-btn[aria-pressed="true"] { border-color: var(--red); background: var(--red-tint); }
 
   /* ---------- Favorites ---------- */
-  .favorites { padding: 8px 0 44px; }
+  .favorites { padding: 12px 0 60px; }
 
   .fav-empty {
     border: 1px dashed var(--line);
@@ -279,9 +284,10 @@
 
   .fav-item {
     background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 12px;
+    border: none;
+    border-radius: 10px;
     padding: 14px 16px;
+    box-shadow: 0 12px 28px -18px rgba(43, 33, 24, 0.14);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -301,7 +307,7 @@
   .fav-item .heart-btn .icon { width: 15px; height: 15px; }
 
   /* ---------- Selection ---------- */
-  .selection { padding: 4px 0 56px; }
+  .selection { padding: 8px 0 72px; }
 
   .selection-head { margin-bottom: 16px; }
 
@@ -330,22 +336,23 @@
     flex: none;
   }
 
-  .badge-signature .icon { fill: #fff8ec; width: 10px; height: 10px; }
+  .badge-signature .icon { fill: var(--on-accent); width: 10px; height: 10px; }
 
   /* ---------- Dish visual (illustrated icon tile) ---------- */
   .dish-visual {
     width: 44px;
     height: 44px;
-    border-radius: 12px;
+    border-radius: 14px;
     background: var(--red-tint);
     display: flex;
     align-items: center;
     justify-content: center;
     flex: none;
+    overflow: hidden;
   }
 
-  .dish-visual.lg { width: 64px; height: 64px; border-radius: 16px; }
-  .dish-visual.sm { width: 34px; height: 34px; border-radius: 9px; }
+  .dish-visual.lg { width: 64px; height: 64px; border-radius: 18px; }
+  .dish-visual.sm { width: 34px; height: 34px; border-radius: 10px; }
 
   .dish-visual img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -394,14 +401,14 @@
   .search-input::placeholder { color: var(--ink-faint); }
   .search-input:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
 
-  .filter-group { margin-top: 14px; }
+  .filter-group { margin-top: 10px; }
 
   .filter-group-label {
-    font-size: 0.72rem;
-    font-weight: 700;
+    font-size: 0.68rem;
+    font-weight: 600;
     color: var(--ink-faint);
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
     margin: 0 0 6px;
   }
 
@@ -412,9 +419,9 @@
   }
 
   .chip {
-    border: 1px solid var(--line);
-    background: transparent;
-    color: var(--ink-soft);
+    border: 1px solid transparent;
+    background: var(--surface);
+    color: var(--red);
     border-radius: 999px;
     padding: 6px 14px;
     font-size: 0.8rem;
@@ -423,10 +430,12 @@
     transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
   }
 
+  .chip:hover { border-color: var(--red); }
+
   .chip[aria-pressed="true"] {
     background: var(--red);
     border-color: var(--red);
-    color: #fff8ec;
+    color: var(--on-accent);
   }
 
   .results-count {
@@ -437,17 +446,62 @@
 
   .empty-filter .btn { margin-top: 14px; }
 
-  .listing { border-top: 1px solid var(--line); margin-top: 10px; }
-
-  .listing-row {
-    padding: 22px 0;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
+  .listing {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
   }
 
-  .listing-row-body { flex: 1; min-width: 0; }
+  .listing-row {
+    background: var(--surface);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 16px 32px -20px rgba(43, 33, 24, 0.16);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dish-photo-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: var(--red-tint);
+  }
+
+  .dish-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .dish-visual-panel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dish-visual-panel .visual-icon {
+    width: 56px;
+    height: 56px;
+    color: var(--red-deep);
+  }
+
+  .dish-photo-wrap .heart-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: color-mix(in srgb, var(--surface) 78%, transparent);
+    backdrop-filter: blur(6px);
+  }
+
+  .listing-row-body {
+    flex: 1;
+    min-width: 0;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .listing-row-body .dish-desc { flex: 1; }
 
   .row-top {
     display: flex;
@@ -493,11 +547,12 @@
   }
 
   .heat { display: inline-flex; align-items: center; gap: 3px; }
-  .heat .icon.on { fill: var(--red); }
+  .heat .icon.on { fill: var(--chili-red); }
   .heat .icon.off { fill: var(--line); }
 
   .cat {
-    border: 1px solid var(--line);
+    border: none;
+    background: var(--surface-alt);
     color: var(--ink-soft);
     font-weight: 600;
     font-size: 0.72rem;
@@ -515,6 +570,82 @@
     font-size: 0.92rem;
   }
 
+  /* ---------- Member ---------- */
+  .member { padding: 12px 0 48px; }
+
+  .member-card {
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 20px 40px -20px rgba(43, 33, 24, 0.18);
+    max-width: 420px;
+  }
+
+  .member-tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 18px;
+  }
+
+  .member-tabs .chip { flex: 1; text-align: center; }
+
+  .member-field { margin-bottom: 12px; }
+
+  .member-field label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+    margin-bottom: 5px;
+  }
+
+  .member-field input {
+    width: 100%;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--ink);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font: inherit;
+    font-size: 0.92rem;
+  }
+
+  .member-field input:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+
+  .member-form .btn { width: 100%; justify-content: center; margin-top: 4px; }
+
+  .member-msg {
+    font-size: 0.84rem;
+    margin: 0 0 12px;
+  }
+
+  .member-msg.is-error { color: var(--terracotta); }
+  .member-msg.is-ok { color: var(--olive-deep); }
+
+  .member-signed-in { display: flex; flex-direction: column; gap: 12px; }
+
+  .member-signed-in .member-name { font-size: 1.05rem; margin: 0; }
+  .member-signed-in .member-email { font-size: 0.82rem; color: var(--ink-faint); margin: 0; }
+
+  .member-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .member-status a,
+  .member-status button.link-btn {
+    background: none;
+    border: none;
+    color: var(--red);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+  }
+
   /* ---------- Footer ---------- */
   footer {
     padding: 28px 0 42px;
@@ -527,11 +658,21 @@
   footer .footnote { margin-top: 4px; opacity: 0.85; }
 
   @media (max-width: 480px) {
-    .hero { padding: 30px 0 22px; }
+    .hero { padding: 36px 0 26px; }
     .today-card { padding: 18px; }
-    .listing-row { padding: 18px 0; }
+    .today-body { padding: 18px; }
+    .listing-row-body { padding: 14px; }
     .nav-links { display: none; }
   }
+
+  /* ---------- Divider ---------- */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 0;
+  }
+
+  .wrap { position: relative; z-index: 1; }
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -586,6 +727,16 @@
     <circle cx="15" cy="9" r="1.7"/>
     <path d="M4 20q1 -1 0 -2"/>
   </symbol>
+  <symbol id="icon-nam-tok-moo" viewBox="0 0 24 24">
+    <path d="M4 11a8 8 0 0 0 16 0"/>
+    <path d="M3 11h18"/>
+    <ellipse cx="8.3" cy="9.4" rx="2.1" ry="1.05" transform="rotate(-16 8.3 9.4)"/>
+    <ellipse cx="12.7" cy="8.7" rx="2.1" ry="1.05" transform="rotate(12 12.7 8.7)"/>
+    <ellipse cx="16.6" cy="9.7" rx="1.8" ry="0.95" transform="rotate(-10 16.6 9.7)"/>
+    <circle cx="10.4" cy="10.9" r="0.5" style="fill:currentColor;stroke:none"/>
+    <circle cx="13.2" cy="11.1" r="0.5" style="fill:currentColor;stroke:none"/>
+    <path d="M17.3 3.4c1.1 -1.3 3 -1.3 2.4 1.2c-1.2 1.3 -3 1.3 -2.4 -1.2z"/>
+  </symbol>
   <symbol id="icon-dip-plate" viewBox="0 0 24 24">
     <path d="M7 9.5l1 6.2a2 2 0 0 0 2 1.7h4a2 2 0 0 0 2-1.7l1-6.2"/>
     <ellipse cx="12" cy="9.5" rx="5" ry="1.3"/>
@@ -607,7 +758,9 @@
       <a href="#today">สุ่มวันนี้</a>
       <a href="#favorites">รายการโปรด</a>
       <a href="#selection">คัดสรรทั้งหมด</a>
+      <a href="#member">สมาชิก</a>
     </nav>
+    <div id="member-slot"><!-- filled by JS --></div>
   </div>
 </header>
 
@@ -620,12 +773,23 @@
     <div class="hero-rule"></div>
   </section>
 
+  <section class="member" id="member">
+    <p class="kicker">สมาชิก</p>
+    <div class="member-card" id="member-card">
+      <!-- filled by JS -->
+    </div>
+  </section>
+
+  <div class="divider" role="presentation"></div>
+
   <section class="today" id="today">
     <p class="kicker">จานประจำวันนี้</p>
     <div class="today-card" id="today-card">
       <!-- filled by JS -->
     </div>
   </section>
+
+  <div class="divider" role="presentation"></div>
 
   <section class="favorites" id="favorites">
     <p class="kicker">รายการโปรดของฉัน</p>
@@ -634,14 +798,16 @@
     </div>
   </section>
 
+  <div class="divider" role="presentation"></div>
+
   <section class="selection" id="selection">
     <div class="selection-head">
-      <p class="kicker">The Selection</p>
+      <p class="kicker">Full Menu</p>
       <h2>20 จานในคัดสรร</h2>
       <p>คัดจากทั้ง 4 ภาคของไทย ตั้งแต่แผงลอยข้างทางถึงร้านอาหารทั่วไป</p>
       <div class="legend-line">
         <span><span class="badge-signature"><svg class="icon"><use href="#chili-shape"/></svg></span> จานซิกเนเจอร์</span>
-        <span><svg class="icon" style="fill:var(--red)"><use href="#chili-shape"/></svg> ดัชนีความเผ็ด 0–3</span>
+        <span><svg class="icon" style="fill:var(--chili-red)"><use href="#chili-shape"/></svg> ดัชนีความเผ็ด 0–3</span>
         <span><svg class="icon" style="fill:none;stroke:var(--ink-faint);stroke-width:1.6"><use href="#heart-shape"/></svg> กดเก็บเป็นรายการโปรด</span>
       </div>
     </div>
@@ -672,14 +838,17 @@
     </div>
   </section>
 
+  <div class="divider" role="presentation"></div>
+
   <footer>
-    <div class="wordmark">ป้าย<em style="color:var(--red); font-style:normal;">เมนู</em>ไทย</div>
+    <div class="wordmark">ป้าย<em style="color:var(--red); font-style:inherit;">เมนู</em>ไทย</div>
     <div>คัดสรรเมนูอาหารไทยยอดนิยม จัดในรูปแบบคู่มือร้านอาหาร</div>
     <div class="footnote">สร้างขึ้นเพื่อการแนะนำเท่านั้น · รายการโปรดบันทึกไว้ในเบราว์เซอร์นี้เท่านั้น</div>
   </footer>
 
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 (function () {
   "use strict";
@@ -696,7 +865,7 @@
     { id: "mango-sticky-rice", th: "ข้าวเหนียวมะม่วง", en: "Mango Sticky Rice", desc: "ข้าวเหนียวมูนกะทิหอมหวาน เสิร์ฟคู่มะม่วงสุกฉ่ำ โรยหน้าด้วยกะทิข้นและถั่วทอง ของหวานยอดฮิต", spice: 0, cat: "ของหวาน", region: "กลาง", sig: false },
     { id: "larb-moo", th: "ลาบหมู", en: "Larb Moo", desc: "สับหมูสุกคลุกน้ำมะนาว พริกป่น ข้าวคั่ว ใบสะระแหน่ รสจัดจ้านแบบอีสานแท้ ทานคู่ข้าวเหนียว", spice: 2, cat: "ยำ/ลาบ", region: "อีสาน", sig: false },
     { id: "kai-yang", th: "ไก่ย่าง", en: "Kai Yang", desc: "ไก่หมักสมุนไพรและเครื่องเทศ ย่างไฟอ่อนจนหอมกรุ่น หนังกรอบเนื้อฉ่ำ เสิร์ฟคู่แจ่วและข้าวเหนียว", spice: 0, cat: "ปิ้งย่าง", region: "อีสาน", sig: false },
-    { id: "nam-tok-moo", th: "น้ำตกหมู", en: "Nam Tok Moo", desc: "หมูย่างหั่นบางคลุกน้ำมะนาว พริกป่น ข้าวคั่ว ใบสะระแหน่ รสเปรี้ยวเผ็ดจัดจ้านคล้ายลาบ", spice: 2, cat: "ยำ/ลาบ", region: "อีสาน", sig: false },
+    { id: "nam-tok-moo", th: "น้ำตกหมู", en: "Nam Tok Moo", desc: "หมูย่างหั่นบางคลุกน้ำมะนาว พริกป่น ข้าวคั่ว ใบสะระแหน่ รสเปรี้ยวเผ็ดจัดจ้านคล้ายลาบ", spice: 2, cat: "ยำ/ลาบ", region: "อีสาน", sig: false, img: "images/nam-tok-moo.jpg" },
     { id: "tom-saep", th: "ต้มแซ่บกระดูกอ่อน", en: "Tom Saep", desc: "ซุปกระดูกอ่อนหมูรสเปรี้ยวเผ็ดจัดจ้าน ใส่ตะไคร้ ใบมะกรูด พริกสด มะนาว ความแซ่บแบบอีสาน", spice: 3, cat: "ซุป", region: "อีสาน", sig: false },
     { id: "gaeng-hang-lay", th: "แกงฮังเล", en: "Gaeng Hang Lay", desc: "แกงหมูสไตล์ล้านนา รสเปรี้ยวหวานเค็มกลมกล่อม ใส่ขิงและกระเทียมดอง ไม่ใส่กะทิ หอมเครื่องเทศ", spice: 1, cat: "แกง", region: "เหนือ", sig: false },
     { id: "sai-ua", th: "ไส้อั่ว", en: "Sai Ua", desc: "ไส้กรอกเหนือยัดไส้หมูสับผสมสมุนไพรและพริกแกง ย่างจนหอมกรุ่น เผ็ดน้อยแต่หอมเครื่องเทศเข้มข้น", spice: 1, cat: "ปิ้งย่าง", region: "เหนือ", sig: false },
@@ -723,10 +892,21 @@
     "ของหวาน": "icon-dessert-bowl"
   };
 
-  function visualMarkup(cat, sizeClass) {
-    var symbolId = CATEGORY_ICON[cat] || "icon-noodle-bowl";
-    return '<div class="dish-visual' + (sizeClass ? " " + sizeClass : "") + '" aria-hidden="true">' +
-      '<svg class="visual-icon"><use href="#' + symbolId + '"/></svg></div>';
+  var DISH_ICON = {
+    "nam-tok-moo": "icon-nam-tok-moo"
+  };
+
+  function pickIconId(d) {
+    return DISH_ICON[d.id] || CATEGORY_ICON[d.cat] || "icon-noodle-bowl";
+  }
+
+  function visualMarkup(d, sizeClass) {
+    var classes = "dish-visual" + (sizeClass ? " " + sizeClass : "");
+    if (d.img) {
+      return '<div class="' + classes + '" aria-hidden="true"><img src="' + d.img + '" alt="" loading="lazy"></div>';
+    }
+    return '<div class="' + classes + '" aria-hidden="true">' +
+      '<svg class="visual-icon"><use href="#' + pickIconId(d) + '"/></svg></div>';
   }
 
   var FAV_KEY = "thaiMenu.favorites.v1";
@@ -782,9 +962,26 @@
   var activeRegion = "ทั้งหมด";
   var searchQuery = "";
 
+  var SUPABASE_URL = "https://zsgwuxdwawgvprkqkgyo.supabase.co";
+  var SUPABASE_KEY = "sb_publishable_61cYHLqVnRxRzOC6j8_Hxg_EOAONKPS";
+  var sb = (window.supabase && window.supabase.createClient)
+    ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
+    : null;
+
+  var member = null;
+  var memberTab = "signup";
+  var memberMsg = null;
+  var memberBusy = false;
+
   function dishById(id) {
     for (var i = 0; i < DISHES.length; i++) if (DISHES[i].id === id) return DISHES[i];
     return null;
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
   }
 
   function heatMarkup(spice) {
@@ -833,6 +1030,20 @@
     });
   }
 
+  function listingRowMarkup(d) {
+    var titleBlock = '<div class="row-top">' +
+      (d.sig ? '<span class="badge-signature" title="ซิกเนเจอร์"><svg class="icon"><use href="#chili-shape"/></svg></span>' : "") +
+      '<h3 class="dish-name">' + d.th + ' <span class="dish-en">' + d.en + "</span></h3></div>";
+    var metaBlock = '<div class="row-meta">' + heatMarkup(d.spice) + '<span class="cat">' + d.cat + '</span><span class="region">ภาค' + d.region + "</span></div>";
+    var visual = d.img
+      ? '<img class="dish-photo" src="' + d.img + '" alt="' + d.th + '" loading="lazy">'
+      : '<div class="dish-visual-panel" aria-hidden="true"><svg class="visual-icon"><use href="#' + pickIconId(d) + '"/></svg></div>';
+    return '<article class="listing-row">' +
+      '<div class="dish-photo-wrap">' + visual + heartButtonMarkup(d.id) + "</div>" +
+      '<div class="listing-row-body">' + titleBlock + '<p class="dish-desc">' + d.desc + "</p>" + metaBlock + "</div>" +
+      "</article>";
+  }
+
   function renderListing() {
     var list = document.getElementById("listing");
     var count = document.getElementById("results-count");
@@ -843,19 +1054,7 @@
         '<div><button class="btn btn-ghost" type="button" id="clear-filters-btn">ล้างตัวกรองทั้งหมด</button></div></div>';
       return;
     }
-    list.innerHTML = items.map(function (d) {
-      return '<article class="listing-row">' +
-        visualMarkup(d) +
-        '<div class="listing-row-body">' +
-        '<div class="row-top">' +
-        (d.sig ? '<span class="badge-signature" title="ซิกเนเจอร์"><svg class="icon"><use href="#chili-shape"/></svg></span>' : "") +
-        '<h3 class="dish-name">' + d.th + ' <span class="dish-en">' + d.en + "</span></h3></div>" +
-        '<p class="dish-desc">' + d.desc + "</p>" +
-        '<div class="row-meta">' + heatMarkup(d.spice) + '<span class="cat">' + d.cat + '</span><span class="region">ภาค' + d.region + "</span></div>" +
-        "</div>" +
-        heartButtonMarkup(d.id) +
-        "</article>";
-    }).join("");
+    list.innerHTML = items.map(listingRowMarkup).join("");
   }
 
   function renderFavorites() {
@@ -878,9 +1077,22 @@
     var d = todayState.current ? dishById(todayState.current) : null;
     var shownCount = todayState.shown.length;
     var progress = '<span class="today-progress">สุ่มไปแล้ว ' + shownCount + " จาก " + DISHES.length + " เมนูวันนี้</span>";
+    card.classList.toggle("has-photo", !!(d && d.img));
     if (!d) {
       card.innerHTML = '<p class="today-empty">กดปุ่มเพื่อสุ่มหาจานอาหารไทยสำหรับวันนี้</p>' +
         '<div class="today-actions"><button class="btn btn-primary" type="button" id="pick-btn"><svg class="icon" style="fill:none"><use href="#dice-shape"/></svg>สุ่มอาหารไทยวันนี้</button></div>';
+      return;
+    }
+    var metaBlock = '<div class="today-meta">' + heatMarkup(d.spice) + '<span class="cat">' + d.cat + '</span><span class="region">ภาค' + d.region + "</span></div>";
+    var actionsBlock = '<div class="today-actions"><button class="btn btn-ghost" type="button" id="pick-btn"><svg class="icon" style="fill:none"><use href="#dice-shape"/></svg>สุ่มใหม่</button>' + progress + "</div>";
+    if (d.img) {
+      card.innerHTML =
+        '<div class="today-photo-wrap"><img class="today-photo" src="' + d.img + '" alt="' + d.th + '">' + heartButtonMarkup(d.id) + "</div>" +
+        '<div class="today-body">' +
+        '<h3 class="today-name">' + d.th + ' <span class="dish-en">' + d.en + "</span></h3>" +
+        '<p class="today-desc">' + d.desc + "</p>" +
+        metaBlock + actionsBlock +
+        "</div>";
       return;
     }
     card.innerHTML =
@@ -889,8 +1101,7 @@
       '<h3 class="today-name">' + d.th + ' <span class="dish-en">' + d.en + "</span></h3>" +
       "</div>" + heartButtonMarkup(d.id) + "</div>" +
       '<p class="today-desc">' + d.desc + "</p>" +
-      '<div class="today-meta">' + heatMarkup(d.spice) + '<span class="cat">' + d.cat + '</span><span class="region">ภาค' + d.region + "</span></div>" +
-      '<div class="today-actions"><button class="btn btn-ghost" type="button" id="pick-btn"><svg class="icon" style="fill:none"><use href="#dice-shape"/></svg>สุ่มใหม่</button>' + progress + "</div>";
+      metaBlock + actionsBlock;
   }
 
   function pickTodayDish() {
@@ -914,6 +1125,112 @@
     if (btn) btn.addEventListener("click", pickTodayDish);
   }
 
+  function setMemberMsg(text, kind) {
+    memberMsg = text ? { text: text, kind: kind } : null;
+  }
+
+  function memberFormMarkup() {
+    var tabs = '<div class="member-tabs" role="group" aria-label="เลือกสมัครสมาชิกหรือเข้าสู่ระบบ">' +
+      '<button class="chip" type="button" data-member-tab="signup" aria-pressed="' + (memberTab === "signup") + '">สมัครสมาชิก</button>' +
+      '<button class="chip" type="button" data-member-tab="login" aria-pressed="' + (memberTab === "login") + '">เข้าสู่ระบบ</button>' +
+      "</div>";
+    var msg = memberMsg ? '<p class="member-msg is-' + memberMsg.kind + '">' + escapeHtml(memberMsg.text) + "</p>" : "";
+    var fields, submitLabel, submitAttr;
+    if (memberTab === "signup") {
+      fields = '<div class="member-field"><label for="member-name-input">ชื่อที่แสดง</label><input id="member-name-input" type="text" autocomplete="nickname" placeholder="เช่น คุณส้ม"></div>' +
+        '<div class="member-field"><label for="member-email-input">อีเมล</label><input id="member-email-input" type="email" autocomplete="email" placeholder="you@example.com"></div>' +
+        '<div class="member-field"><label for="member-password-input">รหัสผ่าน</label><input id="member-password-input" type="password" autocomplete="new-password" placeholder="อย่างน้อย 6 ตัวอักษร"></div>';
+      submitLabel = memberBusy ? "กำลังสมัคร…" : "สมัครสมาชิก";
+      submitAttr = "data-member-signup";
+    } else {
+      fields = '<div class="member-field"><label for="member-email-input">อีเมล</label><input id="member-email-input" type="email" autocomplete="email" placeholder="you@example.com"></div>' +
+        '<div class="member-field"><label for="member-password-input">รหัสผ่าน</label><input id="member-password-input" type="password" autocomplete="current-password" placeholder="รหัสผ่านของคุณ"></div>';
+      submitLabel = memberBusy ? "กำลังเข้าสู่ระบบ…" : "เข้าสู่ระบบ";
+      submitAttr = "data-member-login";
+    }
+    return tabs + msg + '<div class="member-form">' + fields +
+      '<button class="btn btn-primary" type="button" ' + submitAttr + (memberBusy ? " disabled" : "") + ">" + submitLabel + "</button></div>";
+  }
+
+  function memberSignedInMarkup() {
+    return '<div class="member-signed-in"><div><p class="member-name">สวัสดี, ' + escapeHtml(member.displayName) + '</p><p class="member-email">' + escapeHtml(member.email) + '</p></div>' +
+      '<button class="btn btn-ghost" type="button" data-member-logout>ออกจากระบบ</button></div>';
+  }
+
+  function renderMemberCard() {
+    var card = document.getElementById("member-card");
+    if (!card) return;
+    card.innerHTML = member ? memberSignedInMarkup() : memberFormMarkup();
+  }
+
+  function renderMemberSlot() {
+    var slot = document.getElementById("member-slot");
+    if (!slot) return;
+    slot.innerHTML = member
+      ? '<div class="member-status">สวัสดี ' + escapeHtml(member.displayName) + ' <button class="link-btn" type="button" data-member-logout>ออกจากระบบ</button></div>'
+      : '<div class="member-status"><a href="#member">เข้าสู่ระบบ / สมัครสมาชิก</a></div>';
+  }
+
+  function renderMember() {
+    renderMemberSlot();
+    renderMemberCard();
+  }
+
+  function applySession(session) {
+    if (!session || !session.user) { member = null; renderMember(); return; }
+    var u = session.user;
+    var displayName = (u.user_metadata && u.user_metadata.display_name) || (u.email ? u.email.split("@")[0] : "สมาชิก");
+    member = { id: u.id, email: u.email, displayName: displayName };
+    renderMember();
+  }
+
+  function handleSignup() {
+    if (!sb) { setMemberMsg("ยังไม่ได้เชื่อมต่อระบบสมาชิก", "error"); renderMemberCard(); return; }
+    var name = (document.getElementById("member-name-input") || {}).value || "";
+    var email = (document.getElementById("member-email-input") || {}).value || "";
+    var pass = (document.getElementById("member-password-input") || {}).value || "";
+    name = name.trim();
+    email = email.trim();
+    if (!name || !email || !pass) { setMemberMsg("กรอกข้อมูลให้ครบทุกช่อง", "error"); renderMemberCard(); return; }
+    if (pass.length < 6) { setMemberMsg("รหัสผ่านต้องมีอย่างน้อย 6 ตัวอักษร", "error"); renderMemberCard(); return; }
+    memberBusy = true;
+    setMemberMsg(null);
+    renderMemberCard();
+    sb.auth.signUp({ email: email, password: pass, options: { data: { display_name: name } } }).then(function (res) {
+      memberBusy = false;
+      if (res.error) { setMemberMsg(res.error.message, "error"); renderMemberCard(); return; }
+      if (res.data && res.data.session) {
+        applySession(res.data.session);
+      } else {
+        setMemberMsg("สมัครสำเร็จ กรุณาตรวจสอบอีเมลเพื่อยืนยันก่อนเข้าสู่ระบบ", "ok");
+        renderMemberCard();
+      }
+    });
+  }
+
+  function handleLogin() {
+    if (!sb) { setMemberMsg("ยังไม่ได้เชื่อมต่อระบบสมาชิก", "error"); renderMemberCard(); return; }
+    var email = ((document.getElementById("member-email-input") || {}).value || "").trim();
+    var pass = (document.getElementById("member-password-input") || {}).value || "";
+    if (!email || !pass) { setMemberMsg("กรอกอีเมลและรหัสผ่าน", "error"); renderMemberCard(); return; }
+    memberBusy = true;
+    setMemberMsg(null);
+    renderMemberCard();
+    sb.auth.signInWithPassword({ email: email, password: pass }).then(function (res) {
+      memberBusy = false;
+      if (res.error) { setMemberMsg(res.error.message, "error"); renderMemberCard(); return; }
+      applySession(res.data.session);
+    });
+  }
+
+  function handleLogout() {
+    if (!sb) return;
+    sb.auth.signOut().then(function () {
+      memberTab = "signup";
+      applySession(null);
+    });
+  }
+
   function toggleFavorite(id) {
     if (favorites[id]) delete favorites[id];
     else favorites[id] = true;
@@ -925,6 +1242,11 @@
   }
 
   document.addEventListener("click", function (e) {
+    var memberTabBtn = e.target.closest("[data-member-tab]");
+    if (memberTabBtn) { memberTab = memberTabBtn.getAttribute("data-member-tab"); setMemberMsg(null); renderMemberCard(); return; }
+    if (e.target.closest("[data-member-signup]")) { handleSignup(); return; }
+    if (e.target.closest("[data-member-login]")) { handleLogin(); return; }
+    if (e.target.closest("[data-member-logout]")) { handleLogout(); return; }
     var favBtn = e.target.closest("[data-fav-toggle]");
     if (favBtn) { toggleFavorite(favBtn.getAttribute("data-fav-toggle")); return; }
     var chip = e.target.closest("[data-cat]");
@@ -964,7 +1286,20 @@
   renderRegionBar();
   renderListing();
   renderFavorites();
+  renderMember();
   if (!todayState.current) pickTodayDish();
   else { renderTodayCard(); attachTodayHandlers(); }
+
+  if (sb) {
+    sb.auth.getSession().then(function (res) {
+      applySession(res.data && res.data.session);
+    });
+    sb.auth.onAuthStateChange(function (_event, session) {
+      applySession(session);
+    });
+  } else {
+    setMemberMsg("ไม่สามารถเชื่อมต่อระบบสมาชิกได้ในขณะนี้", "error");
+    renderMemberCard();
+  }
 })();
 </script>

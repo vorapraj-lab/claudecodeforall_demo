@@ -6,6 +6,8 @@ Derived from [`CONTEXT.md`](./CONTEXT.md). Each section maps one glossary term t
 
 - [x] Define a `Dish` data shape: name (TH + EN), region, category, spice index — one entry per item in the library
 - [x] Give every dish a short, appetizing description (no lorem/placeholder text)
+- [x] Support an optional real photo per dish (`img` field); render it and the category-icon fallback through the same card template so the library reads as one set
+- [ ] Photograph the remaining dishes (1 of 20 has a real photo as of this writing)
 
 ## Dish Library
 
@@ -42,6 +44,17 @@ Derived from [`CONTEXT.md`](./CONTEXT.md). Each section maps one glossary term t
 - [x] Wrap all `localStorage` reads/writes in `try/catch` so the page still works with storage blocked or unavailable
 - [x] Render a dedicated "รายการโปรดของฉัน" section
 - [x] Show an empty-state message when nothing is saved yet
+
+## Member
+
+- [x] Provision a Supabase project ("Thai Food", ref `zsgwuxdwawgvprkqkgyo`) for auth-only storage
+- [x] Create `public.profiles` (id, display_name, created_at) with RLS restricted to the owning row, populated via a `handle_new_user` trigger on `auth.users`
+- [x] Load `@supabase/supabase-js` via CDN and wire up a signup form (display name, email, password) and a login form
+- [x] Handle the "email confirmation required" state explicitly (no session returned from `signUp`) rather than failing silently
+- [x] Show signed-in state (display name + logout) in the masthead and in the member section
+- [x] Keep Favorites unchanged — per-device only, not tied to a member account, per [ADR-0002](./docs/adr/0002-membership-via-supabase-auth.md)
+- [ ] Password reset / "forgot password" flow (not yet requested)
+- [ ] Profile editing beyond display name (not yet requested)
 
 ## Possible next steps (not yet requested)
 
