@@ -1,0 +1,3 @@
+# Favorites live in browser localStorage, not a shared store
+
+The Artifact platform this page is published on offers a shared, cross-viewer database capability, which is the usual recommendation for any state meant to persist reliably. We deliberately did not use it for Favorites: the user explicitly asked for a per-device list (not synced across visitors or devices), so Favorites are written to the viewer's own browser `localStorage` instead. This means a visitor's favorites don't follow them to another browser or device, and won't be visible to Claude or other viewers — a real trade-off against the simplicity of "just save the heart taps locally" that the user chose knowingly.

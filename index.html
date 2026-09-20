@@ -1,0 +1,970 @@
+<title>ป้ายเมนูไทย</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Trirong:wght@500;600;700&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light;
+    --paper: #faf7f1;
+    --surface: #ffffff;
+    --surface-alt: #f4efe4;
+    --ink: #1c1815;
+    --ink-soft: #6f6459;
+    --ink-faint: #a49a8a;
+    --red: #a2172b;
+    --red-deep: #7c1020;
+    --red-tint: #f4dfe1;
+    --line: #e6ded0;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --paper: #17140f;
+      --surface: #1d1912;
+      --surface-alt: #241e15;
+      --ink: #f2ead9;
+      --ink-soft: #b8a894;
+      --ink-faint: #756a58;
+      --red: #e2495c;
+      --red-deep: #ef6a7c;
+      --red-tint: #3a1e21;
+      --line: #362f24;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --paper: #17140f;
+    --surface: #1d1912;
+    --surface-alt: #241e15;
+    --ink: #f2ead9;
+    --ink-soft: #b8a894;
+    --ink-faint: #756a58;
+    --red: #e2495c;
+    --red-deep: #ef6a7c;
+    --red-tint: #3a1e21;
+    --line: #362f24;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Sarabun', 'Noto Sans Thai', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    padding-inline: 20px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+  }
+
+  h1, h2, h3, .display {
+    font-family: 'Trirong', 'Noto Serif Thai', serif;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  button { font: inherit; }
+
+  img, svg { max-width: 100%; }
+
+  a { color: inherit; }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .kicker {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin: 0 0 8px;
+  }
+
+  .icon { width: 14px; height: 14px; display: inline-block; flex: none; }
+
+  /* ---------- Masthead ---------- */
+  .masthead {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 10;
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+    margin-inline: -20px;
+    padding-inline: 20px;
+  }
+
+  .masthead-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: 15px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .wordmark {
+    font-family: 'Trirong', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  .wordmark em { font-style: normal; color: var(--red); }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+
+  .nav-links a { text-decoration: none; color: var(--ink-soft); }
+  .nav-links a:hover { color: var(--red); }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    border-radius: 999px;
+    padding: 12px 22px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    cursor: pointer;
+    transition: transform 0.12s ease, background 0.12s ease;
+  }
+
+  .btn-primary { background: var(--red); color: #fff8ec; }
+  .btn-primary:hover { background: var(--red-deep); transform: translateY(-1px); }
+
+  .btn-ghost {
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+  }
+  .btn-ghost:hover { border-color: var(--red); color: var(--red); }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 38px 0 26px; }
+
+  .hero h1 {
+    font-size: clamp(1.8rem, 6vw, 2.3rem);
+    line-height: 1.3;
+    margin: 0 0 12px;
+  }
+
+  .hero .dek {
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+    max-width: 48ch;
+    margin: 0 0 20px;
+  }
+
+  .hero-rule { width: 48px; height: 3px; background: var(--red); }
+
+  /* ---------- Today's dish ---------- */
+  .today { padding: 8px 0 40px; }
+
+  .today-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 24px;
+  }
+
+  .today-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .today-name {
+    font-size: 1.3rem;
+    margin: 0 0 6px;
+  }
+
+  .today-desc {
+    color: var(--ink-soft);
+    font-size: 0.94rem;
+    margin: 0 0 14px;
+  }
+
+  .today-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+    margin-bottom: 18px;
+  }
+
+  .today-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .today-progress {
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+  }
+
+  .today-empty {
+    color: var(--ink-soft);
+    font-size: 0.94rem;
+    margin: 0 0 18px;
+  }
+
+  /* ---------- Heart toggle ---------- */
+  .heart-btn {
+    width: 38px;
+    height: 38px;
+    flex: none;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.12s ease, background 0.12s ease;
+  }
+
+  .heart-btn .icon { width: 17px; height: 17px; }
+  .heart-btn .icon.outline { fill: none; stroke: var(--ink-faint); stroke-width: 1.6; }
+  .heart-btn .icon.filled { fill: var(--red); stroke: none; }
+  .heart-btn[aria-pressed="true"] { border-color: var(--red); background: var(--red-tint); }
+
+  /* ---------- Favorites ---------- */
+  .favorites { padding: 8px 0 44px; }
+
+  .fav-empty {
+    border: 1px dashed var(--line);
+    border-radius: 14px;
+    padding: 22px;
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+  }
+
+  .fav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+  }
+
+  .fav-item {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .fav-item-name { font-size: 0.98rem; }
+  .fav-item-en {
+    display: block;
+    font-size: 0.74rem;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .fav-item .heart-btn { width: 32px; height: 32px; }
+  .fav-item .heart-btn .icon { width: 15px; height: 15px; }
+
+  /* ---------- Selection ---------- */
+  .selection { padding: 4px 0 56px; }
+
+  .selection-head { margin-bottom: 16px; }
+
+  .selection-head h2 { font-size: 1.5rem; margin: 0 0 4px; }
+  .selection-head p { color: var(--ink-soft); font-size: 0.9rem; margin: 0; }
+
+  .legend-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    margin-top: 10px;
+  }
+
+  .legend-line span { display: inline-flex; align-items: center; gap: 5px; }
+
+  .badge-signature {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--red);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+  }
+
+  .badge-signature .icon { fill: #fff8ec; width: 10px; height: 10px; }
+
+  /* ---------- Dish visual (illustrated icon tile) ---------- */
+  .dish-visual {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--red-tint);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+  }
+
+  .dish-visual.lg { width: 64px; height: 64px; border-radius: 16px; }
+  .dish-visual.sm { width: 34px; height: 34px; border-radius: 9px; }
+
+  .dish-visual img { width: 100%; height: 100%; object-fit: cover; }
+
+  .visual-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--red-deep);
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .dish-visual.lg .visual-icon { width: 34px; height: 34px; }
+  .dish-visual.sm .visual-icon { width: 18px; height: 18px; }
+
+  .search-wrap { position: relative; margin-top: 4px; }
+
+  .search-wrap .search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    color: var(--ink-faint);
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    pointer-events: none;
+  }
+
+  .search-input {
+    width: 100%;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--ink);
+    border-radius: 999px;
+    padding: 11px 16px 11px 40px;
+    font: inherit;
+    font-size: 0.92rem;
+  }
+
+  .search-input::placeholder { color: var(--ink-faint); }
+  .search-input:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+
+  .filter-group { margin-top: 14px; }
+
+  .filter-group-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 6px;
+  }
+
+  .filter-bar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .chip {
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink-soft);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+  }
+
+  .chip[aria-pressed="true"] {
+    background: var(--red);
+    border-color: var(--red);
+    color: #fff8ec;
+  }
+
+  .results-count {
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+    margin: 16px 0 0;
+  }
+
+  .empty-filter .btn { margin-top: 14px; }
+
+  .listing { border-top: 1px solid var(--line); margin-top: 10px; }
+
+  .listing-row {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .listing-row-body { flex: 1; min-width: 0; }
+
+  .row-top {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+
+  .dish-name {
+    font-size: 1.12rem;
+    margin: 0;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 9px;
+    flex-wrap: wrap;
+  }
+
+  .dish-en {
+    font-family: 'Sarabun', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .dish-desc {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    margin: 0 0 10px;
+    max-width: 58ch;
+  }
+
+  .row-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+  }
+
+  .heat { display: inline-flex; align-items: center; gap: 3px; }
+  .heat .icon.on { fill: var(--red); }
+  .heat .icon.off { fill: var(--line); }
+
+  .cat {
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    padding: 2px 10px;
+    border-radius: 999px;
+  }
+
+  .region { font-style: italic; }
+
+  .empty-filter {
+    padding: 30px 0;
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    padding: 28px 0 42px;
+    border-top: 1px solid var(--line);
+    color: var(--ink-faint);
+    font-size: 0.8rem;
+  }
+
+  footer .wordmark { font-size: 0.92rem; margin-bottom: 6px; }
+  footer .footnote { margin-top: 4px; opacity: 0.85; }
+
+  @media (max-width: 480px) {
+    .hero { padding: 30px 0 22px; }
+    .today-card { padding: 18px; }
+    .listing-row { padding: 18px 0; }
+    .nav-links { display: none; }
+  }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="chili-shape" viewBox="0 0 24 24">
+    <path d="M14.2 2.3c-.5.9-.6 1.7.1 2.4-2 .7-3.8 3-3.8 5.6 0 3.6 2.6 6.2 5.3 6.2 3.3 0 5.7-2.7 5.7-6 0-2.5-1.6-4.3-3.4-4.9.5-1.2.3-2.3-.6-3.1-.5 1-1 1.7-1.6 2.1-.5-1-1-1.7-1.7-2.3z"/>
+    <path d="M9.8 10c-2.4 1-4 3.4-4 6.2 0 3.6 2.9 6.5 6.4 6.5"/>
+  </symbol>
+  <symbol id="heart-shape" viewBox="0 0 24 24">
+    <path d="M12 20.3c-.3 0-.6-.1-.8-.3C7.6 17.3 3.5 13.7 3.5 9.7c0-2.8 2.1-4.9 4.8-4.9 1.6 0 3 .8 3.9 2 .9-1.2 2.3-2 3.9-2 2.7 0 4.8 2.1 4.8 4.9 0 4-4.1 7.6-7.7 10.3-.2.2-.5.3-.8.3z"/>
+  </symbol>
+  <symbol id="dice-shape" viewBox="0 0 24 24">
+    <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <circle cx="8" cy="8" r="1.5"/>
+    <circle cx="16" cy="8" r="1.5"/>
+    <circle cx="12" cy="12" r="1.5"/>
+    <circle cx="8" cy="16" r="1.5"/>
+    <circle cx="16" cy="16" r="1.5"/>
+  </symbol>
+  <symbol id="icon-noodle-bowl" viewBox="0 0 24 24">
+    <path d="M4 11a8 8 0 0 0 16 0"/>
+    <path d="M3 11h18"/>
+    <path d="M7 11q1.5 -1.6 3 0t3 0 3 0"/>
+    <path d="M17.2 3v3.4M18.4 3v3.4M19.6 3v3.4M18.4 6.4v4.6"/>
+  </symbol>
+  <symbol id="icon-soup-bowl" viewBox="0 0 24 24">
+    <path d="M4 11a8 8 0 0 0 16 0"/>
+    <path d="M3 11h18"/>
+    <path d="M7 11q1.5 -1 3 0t3 0 3 0"/>
+    <ellipse cx="18.3" cy="4" rx="1.1" ry="1.6"/>
+    <path d="M18.3 5.6v5"/>
+  </symbol>
+  <symbol id="icon-curry-bowl" viewBox="0 0 24 24">
+    <path d="M4 11a8 8 0 0 0 16 0"/>
+    <path d="M3 11h18"/>
+    <circle cx="9" cy="9.6" r="0.9" style="fill:currentColor;stroke:none"/>
+    <circle cx="12.5" cy="8.7" r="0.9" style="fill:currentColor;stroke:none"/>
+    <circle cx="16" cy="9.6" r="0.9" style="fill:currentColor;stroke:none"/>
+    <circle cx="18.4" cy="4" r="1.3"/>
+    <path d="M19.3 5.1v5"/>
+  </symbol>
+  <symbol id="icon-salad-bowl" viewBox="0 0 24 24">
+    <path d="M4 11a8 8 0 0 0 16 0"/>
+    <path d="M3 11h18"/>
+    <path d="M7 10.6l1.4 -1.4 1.4 1.4 1.4 -1.4 1.4 1.4 1.4 -1.4 1.4 1.4"/>
+    <circle cx="18" cy="4.5" r="1.8"/>
+    <path d="M18 2.9v3.2M16.4 4.5h3.2"/>
+  </symbol>
+  <symbol id="icon-grill-skewer" viewBox="0 0 24 24">
+    <path d="M5 19L19 5"/>
+    <circle cx="9" cy="15" r="1.7"/>
+    <circle cx="12" cy="12" r="1.7"/>
+    <circle cx="15" cy="9" r="1.7"/>
+    <path d="M4 20q1 -1 0 -2"/>
+  </symbol>
+  <symbol id="icon-dip-plate" viewBox="0 0 24 24">
+    <path d="M7 9.5l1 6.2a2 2 0 0 0 2 1.7h4a2 2 0 0 0 2-1.7l1-6.2"/>
+    <ellipse cx="12" cy="9.5" rx="5" ry="1.3"/>
+    <path d="M15.3 5.8l3-3"/>
+    <circle cx="18.7" cy="2.4" r="1"/>
+  </symbol>
+  <symbol id="icon-dessert-bowl" viewBox="0 0 24 24">
+    <path d="M4 11a8 8 0 0 0 16 0"/>
+    <path d="M3 11h18"/>
+    <path d="M8 11q0 -3.2 4 -3.2t4 3.2"/>
+    <path d="M16.3 4.6c1.6 -1.6 4 -1.6 3.2 1.6c-1.6 1.6 -4 1.6 -3.2 -1.6z"/>
+  </symbol>
+</svg>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <div class="wordmark">ป้าย<em>เมนู</em>ไทย</div>
+    <nav class="nav-links">
+      <a href="#today">สุ่มวันนี้</a>
+      <a href="#favorites">รายการโปรด</a>
+      <a href="#selection">คัดสรรทั้งหมด</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero">
+    <p class="kicker">The Selection · Bangkok &amp; Beyond</p>
+    <h1>อาหารไทยที่คนไทยกินทุกวัน</h1>
+    <p class="dek">คัดสรรเมนูจากทั้ง 4 ภาคของไทย เรียงพร้อมดัชนีความเผ็ดและหมวดหมู่ สุ่มหาจานวันนี้ หรือเก็บจานที่ชอบไว้เป็นรายการโปรดของตัวเอง</p>
+    <div class="hero-rule"></div>
+  </section>
+
+  <section class="today" id="today">
+    <p class="kicker">จานประจำวันนี้</p>
+    <div class="today-card" id="today-card">
+      <!-- filled by JS -->
+    </div>
+  </section>
+
+  <section class="favorites" id="favorites">
+    <p class="kicker">รายการโปรดของฉัน</p>
+    <div id="favorites-body">
+      <!-- filled by JS -->
+    </div>
+  </section>
+
+  <section class="selection" id="selection">
+    <div class="selection-head">
+      <p class="kicker">The Selection</p>
+      <h2>20 จานในคัดสรร</h2>
+      <p>คัดจากทั้ง 4 ภาคของไทย ตั้งแต่แผงลอยข้างทางถึงร้านอาหารทั่วไป</p>
+      <div class="legend-line">
+        <span><span class="badge-signature"><svg class="icon"><use href="#chili-shape"/></svg></span> จานซิกเนเจอร์</span>
+        <span><svg class="icon" style="fill:var(--red)"><use href="#chili-shape"/></svg> ดัชนีความเผ็ด 0–3</span>
+        <span><svg class="icon" style="fill:none;stroke:var(--ink-faint);stroke-width:1.6"><use href="#heart-shape"/></svg> กดเก็บเป็นรายการโปรด</span>
+      </div>
+    </div>
+
+    <div class="search-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg>
+      <input class="search-input" id="search-input" type="search" placeholder="ค้นหาเมนู เช่น ผัดไทย, Tom Yum, ยำ" aria-label="ค้นหาเมนู">
+    </div>
+
+    <div class="filter-group">
+      <p class="filter-group-label">หมวดหมู่</p>
+      <div class="filter-bar" id="filter-bar" role="group" aria-label="กรองตามหมวดหมู่">
+        <!-- filled by JS -->
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <p class="filter-group-label">ภาค</p>
+      <div class="filter-bar" id="region-bar" role="group" aria-label="กรองตามภาค">
+        <!-- filled by JS -->
+      </div>
+    </div>
+
+    <p class="results-count" id="results-count"></p>
+
+    <div class="listing" id="listing">
+      <!-- filled by JS -->
+    </div>
+  </section>
+
+  <footer>
+    <div class="wordmark">ป้าย<em style="color:var(--red); font-style:normal;">เมนู</em>ไทย</div>
+    <div>คัดสรรเมนูอาหารไทยยอดนิยม จัดในรูปแบบคู่มือร้านอาหาร</div>
+    <div class="footnote">สร้างขึ้นเพื่อการแนะนำเท่านั้น · รายการโปรดบันทึกไว้ในเบราว์เซอร์นี้เท่านั้น</div>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var DISHES = [
+    { id: "pad-thai", th: "ผัดไทย", en: "Pad Thai", desc: "เส้นจันท์ผัดไข่ เต้าหู้ กุ้งแห้ง ถั่วงอก ปรุงรสเปรี้ยวหวานด้วยน้ำมะขามเปียก โรยถั่วลิสงบด", spice: 1, cat: "จานเดียว", region: "กลาง", sig: true },
+    { id: "tom-yum-goong", th: "ต้มยำกุ้ง", en: "Tom Yum Goong", desc: "ซุปรสเปรี้ยวเผ็ดจัดจ้าน กุ้งสด ตะไคร้ ใบมะกรูด ข่า พริก และน้ำมะนาว หอมสมุนไพรเข้มข้น", spice: 2, cat: "ซุป", region: "กลาง", sig: true },
+    { id: "som-tam", th: "ส้มตำ", en: "Som Tam", desc: "มะละกอดิบตำรวมมะเขือเทศ ถั่วฝักยาว พริก กระเทียม ปรุงรสเปรี้ยวเผ็ดเค็มหวานจัดจ้าน", spice: 3, cat: "ยำ/ลาบ", region: "อีสาน", sig: true },
+    { id: "green-curry", th: "แกงเขียวหวาน", en: "Green Curry", desc: "แกงกะทิรสเผ็ดหอมมัน ใส่เนื้อไก่หรือเนื้อวัว มะเขือเปราะ ใบโหระพา หอมกลิ่นเครื่องแกง", spice: 2, cat: "แกง", region: "กลาง", sig: false },
+    { id: "massaman", th: "แกงมัสมั่น", en: "Massaman Curry", desc: "แกงกะทิรสหวานมันออกเปรี้ยวเล็กน้อย ใส่เนื้อ มันฝรั่ง ถั่วลิสง เครื่องเทศหอมกรุ่น", spice: 1, cat: "แกง", region: "กลาง", sig: false },
+    { id: "kra-pao", th: "ผัดกะเพรา", en: "Pad Kra Pao", desc: "ผัดเนื้อสับกับพริกกระเทียมและใบกะเพราหอม ราดข้าวสวยร้อน ๆ เสิร์ฟพร้อมไข่ดาว", spice: 2, cat: "จานเดียว", region: "กลาง", sig: false },
+    { id: "tom-kha-gai", th: "ต้มข่าไก่", en: "Tom Kha Gai", desc: "ซุปกะทิรสเปรี้ยวหวานกลมกล่อม ใส่ไก่ ข่า ตะไคร้ ใบมะกรูด รสอ่อนโยนกว่าต้มยำ", spice: 1, cat: "ซุป", region: "กลาง", sig: false },
+    { id: "khao-soi", th: "ข้าวซอย", en: "Khao Soi", desc: "เส้นบะหมี่ในน้ำแกงกะทิเหลืองหอมเครื่องแกง โรยเส้นบะหมี่กรอบด้านบน อาหารเหนือขึ้นชื่อ", spice: 2, cat: "จานเดียว", region: "เหนือ", sig: true },
+    { id: "mango-sticky-rice", th: "ข้าวเหนียวมะม่วง", en: "Mango Sticky Rice", desc: "ข้าวเหนียวมูนกะทิหอมหวาน เสิร์ฟคู่มะม่วงสุกฉ่ำ โรยหน้าด้วยกะทิข้นและถั่วทอง ของหวานยอดฮิต", spice: 0, cat: "ของหวาน", region: "กลาง", sig: false },
+    { id: "larb-moo", th: "ลาบหมู", en: "Larb Moo", desc: "สับหมูสุกคลุกน้ำมะนาว พริกป่น ข้าวคั่ว ใบสะระแหน่ รสจัดจ้านแบบอีสานแท้ ทานคู่ข้าวเหนียว", spice: 2, cat: "ยำ/ลาบ", region: "อีสาน", sig: false },
+    { id: "kai-yang", th: "ไก่ย่าง", en: "Kai Yang", desc: "ไก่หมักสมุนไพรและเครื่องเทศ ย่างไฟอ่อนจนหอมกรุ่น หนังกรอบเนื้อฉ่ำ เสิร์ฟคู่แจ่วและข้าวเหนียว", spice: 0, cat: "ปิ้งย่าง", region: "อีสาน", sig: false },
+    { id: "nam-tok-moo", th: "น้ำตกหมู", en: "Nam Tok Moo", desc: "หมูย่างหั่นบางคลุกน้ำมะนาว พริกป่น ข้าวคั่ว ใบสะระแหน่ รสเปรี้ยวเผ็ดจัดจ้านคล้ายลาบ", spice: 2, cat: "ยำ/ลาบ", region: "อีสาน", sig: false },
+    { id: "tom-saep", th: "ต้มแซ่บกระดูกอ่อน", en: "Tom Saep", desc: "ซุปกระดูกอ่อนหมูรสเปรี้ยวเผ็ดจัดจ้าน ใส่ตะไคร้ ใบมะกรูด พริกสด มะนาว ความแซ่บแบบอีสาน", spice: 3, cat: "ซุป", region: "อีสาน", sig: false },
+    { id: "gaeng-hang-lay", th: "แกงฮังเล", en: "Gaeng Hang Lay", desc: "แกงหมูสไตล์ล้านนา รสเปรี้ยวหวานเค็มกลมกล่อม ใส่ขิงและกระเทียมดอง ไม่ใส่กะทิ หอมเครื่องเทศ", spice: 1, cat: "แกง", region: "เหนือ", sig: false },
+    { id: "sai-ua", th: "ไส้อั่ว", en: "Sai Ua", desc: "ไส้กรอกเหนือยัดไส้หมูสับผสมสมุนไพรและพริกแกง ย่างจนหอมกรุ่น เผ็ดน้อยแต่หอมเครื่องเทศเข้มข้น", spice: 1, cat: "ปิ้งย่าง", region: "เหนือ", sig: false },
+    { id: "nam-prik-num", th: "น้ำพริกหนุ่ม", en: "Nam Prik Num", desc: "พริกหนุ่มย่างโขลกกับกระเทียมและกะปิ รสเผ็ดกลมกล่อม ทานคู่ผักสดและแคบหมู อาหารเหนือขึ้นชื่อ", spice: 2, cat: "น้ำพริก", region: "เหนือ", sig: false },
+    { id: "gaeng-leuang", th: "แกงเหลือง", en: "Gaeng Leuang", desc: "แกงส้มสไตล์ใต้ รสเปรี้ยวเผ็ดจัดจ้าน ใส่ปลาหรือกุ้งและผักหลากชนิด ไม่ใส่กะทิ สีเหลืองจากขมิ้น", spice: 3, cat: "แกง", region: "ใต้", sig: false },
+    { id: "khua-kling", th: "คั่วกลิ้ง", en: "Khua Kling", desc: "เนื้อสับผัดคั่วกับพริกแกงใต้แบบแห้ง รสเผ็ดจัดจ้านเข้มข้น หอมเครื่องแกงใต้ ไม่ใส่น้ำ", spice: 3, cat: "จานเดียว", region: "ใต้", sig: true },
+    { id: "gaeng-tai-pla", th: "แกงไตปลา", en: "Gaeng Tai Pla", desc: "แกงใต้จากไตปลาหมัก รสเผ็ดเค็มเข้มข้นเป็นเอกลักษณ์ ใส่ผักหลากชนิด กลิ่นแรงแต่รสชาติจัดจ้านถึงใจ", spice: 3, cat: "แกง", region: "ใต้", sig: false },
+    { id: "khao-yam", th: "ข้าวยำ", en: "Khao Yam", desc: "ข้าวคลุกผักสมุนไพรสับละเอียด ราดน้ำบูดูรสเค็มหวาน โรยมะพร้าวคั่ว เปรี้ยวเผ็ดสดชื่นแบบใต้", spice: 1, cat: "ยำ/ลาบ", region: "ใต้", sig: false }
+  ];
+
+  var CATEGORIES = ["ทั้งหมด"];
+  DISHES.forEach(function (d) { if (CATEGORIES.indexOf(d.cat) === -1) CATEGORIES.push(d.cat); });
+
+  var REGIONS = ["ทั้งหมด"];
+  DISHES.forEach(function (d) { if (REGIONS.indexOf(d.region) === -1) REGIONS.push(d.region); });
+
+  var CATEGORY_ICON = {
+    "จานเดียว": "icon-noodle-bowl",
+    "ซุป": "icon-soup-bowl",
+    "แกง": "icon-curry-bowl",
+    "ยำ/ลาบ": "icon-salad-bowl",
+    "ปิ้งย่าง": "icon-grill-skewer",
+    "น้ำพริก": "icon-dip-plate",
+    "ของหวาน": "icon-dessert-bowl"
+  };
+
+  function visualMarkup(cat, sizeClass) {
+    var symbolId = CATEGORY_ICON[cat] || "icon-noodle-bowl";
+    return '<div class="dish-visual' + (sizeClass ? " " + sizeClass : "") + '" aria-hidden="true">' +
+      '<svg class="visual-icon"><use href="#' + symbolId + '"/></svg></div>';
+  }
+
+  var FAV_KEY = "thaiMenu.favorites.v1";
+  var TODAY_KEY = "thaiMenu.todayPick.v1";
+
+  function safeGet(key) {
+    try { return localStorage.getItem(key); } catch (e) { return null; }
+  }
+  function safeSet(key, val) {
+    try { localStorage.setItem(key, val); } catch (e) { /* storage unavailable; state stays in-memory for this visit */ }
+  }
+
+  function loadFavorites() {
+    var raw = safeGet(FAV_KEY);
+    if (!raw) return {};
+    try {
+      var arr = JSON.parse(raw);
+      var map = {};
+      arr.forEach(function (id) { map[id] = true; });
+      return map;
+    } catch (e) { return {}; }
+  }
+  function saveFavorites(map) {
+    safeSet(FAV_KEY, JSON.stringify(Object.keys(map)));
+  }
+
+  function localDateStr() {
+    var d = new Date();
+    var y = d.getFullYear();
+    var m = String(d.getMonth() + 1).padStart(2, "0");
+    var day = String(d.getDate()).padStart(2, "0");
+    return y + "-" + m + "-" + day;
+  }
+
+  function loadTodayState() {
+    var raw = safeGet(TODAY_KEY);
+    var today = localDateStr();
+    if (raw) {
+      try {
+        var state = JSON.parse(raw);
+        if (state.date === today) return state;
+      } catch (e) { /* fall through to fresh state */ }
+    }
+    return { date: today, shown: [], current: null };
+  }
+  function saveTodayState(state) {
+    safeSet(TODAY_KEY, JSON.stringify(state));
+  }
+
+  var favorites = loadFavorites();
+  var todayState = loadTodayState();
+  var activeCategory = "ทั้งหมด";
+  var activeRegion = "ทั้งหมด";
+  var searchQuery = "";
+
+  function dishById(id) {
+    for (var i = 0; i < DISHES.length; i++) if (DISHES[i].id === id) return DISHES[i];
+    return null;
+  }
+
+  function heatMarkup(spice) {
+    var out = '<span class="heat" aria-label="เผ็ดระดับ ' + spice + ' จาก 3">';
+    for (var i = 0; i < 3; i++) {
+      out += '<svg class="icon ' + (i < spice ? "on" : "off") + '"><use href="#chili-shape"/></svg>';
+    }
+    out += "</span>";
+    return out;
+  }
+
+  function heartButtonMarkup(id, size) {
+    var isFav = !!favorites[id];
+    return '<button class="heart-btn" type="button" data-fav-toggle="' + id + '" aria-pressed="' + isFav + '" aria-label="' +
+      (isFav ? "เอาออกจากรายการโปรด" : "เก็บเป็นรายการโปรด") + '">' +
+      '<svg class="icon ' + (isFav ? "filled" : "outline") + '"><use href="#heart-shape"/></svg></button>';
+  }
+
+  function renderFilterBar() {
+    var bar = document.getElementById("filter-bar");
+    bar.innerHTML = CATEGORIES.map(function (cat) {
+      return '<button class="chip" type="button" data-cat="' + cat + '" aria-pressed="' + (cat === activeCategory) + '">' + cat + "</button>";
+    }).join("");
+  }
+
+  function renderRegionBar() {
+    var bar = document.getElementById("region-bar");
+    bar.innerHTML = REGIONS.map(function (r) {
+      var label = r === "ทั้งหมด" ? r : "ภาค" + r;
+      return '<button class="chip" type="button" data-region="' + r + '" aria-pressed="' + (r === activeRegion) + '">' + label + "</button>";
+    }).join("");
+  }
+
+  function matchesSearch(d, q) {
+    if (!q) return true;
+    var hay = (d.th + " " + d.en + " " + d.desc).toLowerCase();
+    return hay.indexOf(q) !== -1;
+  }
+
+  function filteredDishes() {
+    var q = searchQuery.trim().toLowerCase();
+    return DISHES.filter(function (d) {
+      return (activeCategory === "ทั้งหมด" || d.cat === activeCategory) &&
+        (activeRegion === "ทั้งหมด" || d.region === activeRegion) &&
+        matchesSearch(d, q);
+    });
+  }
+
+  function renderListing() {
+    var list = document.getElementById("listing");
+    var count = document.getElementById("results-count");
+    var items = filteredDishes();
+    count.textContent = "พบ " + items.length + " จาน จากทั้งหมด " + DISHES.length + " จาน";
+    if (items.length === 0) {
+      list.innerHTML = '<div class="empty-filter">ไม่พบเมนูที่ตรงกับการค้นหาหรือตัวกรอง' +
+        '<div><button class="btn btn-ghost" type="button" id="clear-filters-btn">ล้างตัวกรองทั้งหมด</button></div></div>';
+      return;
+    }
+    list.innerHTML = items.map(function (d) {
+      return '<article class="listing-row">' +
+        visualMarkup(d) +
+        '<div class="listing-row-body">' +
+        '<div class="row-top">' +
+        (d.sig ? '<span class="badge-signature" title="ซิกเนเจอร์"><svg class="icon"><use href="#chili-shape"/></svg></span>' : "") +
+        '<h3 class="dish-name">' + d.th + ' <span class="dish-en">' + d.en + "</span></h3></div>" +
+        '<p class="dish-desc">' + d.desc + "</p>" +
+        '<div class="row-meta">' + heatMarkup(d.spice) + '<span class="cat">' + d.cat + '</span><span class="region">ภาค' + d.region + "</span></div>" +
+        "</div>" +
+        heartButtonMarkup(d.id) +
+        "</article>";
+    }).join("");
+  }
+
+  function renderFavorites() {
+    var body = document.getElementById("favorites-body");
+    var ids = Object.keys(favorites);
+    if (ids.length === 0) {
+      body.innerHTML = '<div class="fav-empty">ยังไม่มีรายการโปรด — กดหัวใจที่จานที่ชอบเพื่อเก็บไว้ที่นี่</div>';
+      return;
+    }
+    var dishes = ids.map(dishById).filter(Boolean);
+    body.innerHTML = '<div class="fav-grid">' + dishes.map(function (d) {
+      return '<div class="fav-item">' + visualMarkup(d, "sm") +
+        '<div style="flex:1;min-width:0"><span class="fav-item-name">' + d.th + '</span><span class="fav-item-en">' + d.en + "</span></div>" +
+        heartButtonMarkup(d.id) + "</div>";
+    }).join("") + "</div>";
+  }
+
+  function renderTodayCard() {
+    var card = document.getElementById("today-card");
+    var d = todayState.current ? dishById(todayState.current) : null;
+    var shownCount = todayState.shown.length;
+    var progress = '<span class="today-progress">สุ่มไปแล้ว ' + shownCount + " จาก " + DISHES.length + " เมนูวันนี้</span>";
+    if (!d) {
+      card.innerHTML = '<p class="today-empty">กดปุ่มเพื่อสุ่มหาจานอาหารไทยสำหรับวันนี้</p>' +
+        '<div class="today-actions"><button class="btn btn-primary" type="button" id="pick-btn"><svg class="icon" style="fill:none"><use href="#dice-shape"/></svg>สุ่มอาหารไทยวันนี้</button></div>';
+      return;
+    }
+    card.innerHTML =
+      '<div class="today-head"><div style="display:flex;gap:14px;align-items:center;min-width:0">' +
+      visualMarkup(d, "lg") +
+      '<h3 class="today-name">' + d.th + ' <span class="dish-en">' + d.en + "</span></h3>" +
+      "</div>" + heartButtonMarkup(d.id) + "</div>" +
+      '<p class="today-desc">' + d.desc + "</p>" +
+      '<div class="today-meta">' + heatMarkup(d.spice) + '<span class="cat">' + d.cat + '</span><span class="region">ภาค' + d.region + "</span></div>" +
+      '<div class="today-actions"><button class="btn btn-ghost" type="button" id="pick-btn"><svg class="icon" style="fill:none"><use href="#dice-shape"/></svg>สุ่มใหม่</button>' + progress + "</div>";
+  }
+
+  function pickTodayDish() {
+    var shown = todayState.shown;
+    var candidates = DISHES.filter(function (d) { return shown.indexOf(d.id) === -1; });
+    if (candidates.length === 0) {
+      // wrap around: everything has been shown today, allow repeats again
+      shown = [];
+      candidates = DISHES.slice();
+    }
+    var pick = candidates[Math.floor(Math.random() * candidates.length)];
+    shown = shown.concat([pick.id]);
+    todayState = { date: localDateStr(), shown: shown, current: pick.id };
+    saveTodayState(todayState);
+    renderTodayCard();
+    attachTodayHandlers();
+  }
+
+  function attachTodayHandlers() {
+    var btn = document.getElementById("pick-btn");
+    if (btn) btn.addEventListener("click", pickTodayDish);
+  }
+
+  function toggleFavorite(id) {
+    if (favorites[id]) delete favorites[id];
+    else favorites[id] = true;
+    saveFavorites(favorites);
+    renderFavorites();
+    renderListing();
+    renderTodayCard();
+    attachTodayHandlers();
+  }
+
+  document.addEventListener("click", function (e) {
+    var favBtn = e.target.closest("[data-fav-toggle]");
+    if (favBtn) { toggleFavorite(favBtn.getAttribute("data-fav-toggle")); return; }
+    var chip = e.target.closest("[data-cat]");
+    if (chip) {
+      activeCategory = chip.getAttribute("data-cat");
+      renderFilterBar();
+      renderListing();
+      return;
+    }
+    var regionChip = e.target.closest("[data-region]");
+    if (regionChip) {
+      activeRegion = regionChip.getAttribute("data-region");
+      renderRegionBar();
+      renderListing();
+      return;
+    }
+    if (e.target.closest("#clear-filters-btn")) {
+      activeCategory = "ทั้งหมด";
+      activeRegion = "ทั้งหมด";
+      searchQuery = "";
+      var searchEl = document.getElementById("search-input");
+      if (searchEl) searchEl.value = "";
+      renderFilterBar();
+      renderRegionBar();
+      renderListing();
+    }
+  });
+
+  document.addEventListener("input", function (e) {
+    if (e.target && e.target.id === "search-input") {
+      searchQuery = e.target.value;
+      renderListing();
+    }
+  });
+
+  renderFilterBar();
+  renderRegionBar();
+  renderListing();
+  renderFavorites();
+  if (!todayState.current) pickTodayDish();
+  else { renderTodayCard(); attachTodayHandlers(); }
+})();
+</script>
